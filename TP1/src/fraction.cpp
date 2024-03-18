@@ -103,7 +103,11 @@ Fraction operator/(Fraction f1, Fraction const &f2)
     return f1;
 }
 
+float Fraction::to_float() const {
+    return static_cast<float>(numerator) / static_cast<float>(denominator);
+}
+
 Fraction::operator float() const
 {
-    return static_cast<float>(numerator) / denominator;
+    return to_float();
 }

@@ -8,6 +8,7 @@ struct Fraction {
 
     void display();
 
+    float to_float() const;
     operator float() const;
 
 };
