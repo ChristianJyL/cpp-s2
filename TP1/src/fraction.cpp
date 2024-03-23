@@ -22,14 +22,7 @@ bool operator!=(Fraction const &f1, Fraction const &f2)
 
 bool operator<(Fraction const &f1, Fraction const &f2)
 {
-    if (f1.denominator == f2.denominator)
-    {
-        return f1.numerator < f2.numerator;
-    }
-    else
-    {
-        return f1.denominator > f2.denominator;
-    }
+    return f1.numerator * f2.denominator < f2.numerator * f1.denominator;
 }
 
 bool operator>(Fraction const &f1, Fraction const &f2)
