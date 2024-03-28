@@ -35,10 +35,9 @@ int main()
     std::cout << "Inégalité (1/2) != (1/3) : " << (f1 != f2) << std::endl;
 
     // Comparaison
-    f1 = {7, 12};
-    f2 = {5, 12};
-    std::cout << "Comparaison (7/12) < (5/12) : " << (f1 < f2) << std::endl;
-    std::cout << "Comparaison (7/12) > (5/12) : " << (f1 > f2) << std::endl;
+    f1 = {7, 8};
+    f2 = {3, 6};
+    std::cout << "Comparaison (7/8) < (3/6) : " << (f1 < f2) << std::endl;
 
     f1 = {3, 4};
     f2 = {3, 2};
