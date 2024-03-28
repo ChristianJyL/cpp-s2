@@ -16,13 +16,14 @@ std::vector<std::string> split_string(std::string const &s)
 int main()
 {
 
-    // NPI notation
-    std::string input{};
-    std::cout << "Enter your operation: ";
-    std::getline(std::cin, input);
-    std::vector<std::string> tokens = split_string(input);
+    //NPI test avec structure et enum
+    
+    std::vector<std::string> words{split_string("3 4 +")}; //7
+    // std::vector<std::string> words{split_string("2 12 + 5 +")};
+    // std::vector<std::string> words{split_string("3 4 11 5 + / +")};
+    // std::vector<std::string> words{split_string("4 5 2 * +")};
+    std::vector<Token> tokens = tokenize(words);
     std::cout << npi_evaluate(tokens) << std::endl;
-  
 
     return 0;
 }

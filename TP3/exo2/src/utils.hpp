@@ -13,5 +13,12 @@ struct Token {
 bool is_floating(std::string const& s);
 float npi_evaluate(std::vector<std::string> const& tokens);
 
+Token make_token(float value);
+Token make_token(Operator op);
+
+std::vector<Token> tokenize(std::vector<std::string> const& words);
+float npi_evaluate(std::vector<Token> const& tokens);
+
+
 
 
