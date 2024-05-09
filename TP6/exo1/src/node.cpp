@@ -121,6 +121,65 @@ Node*& most_left(Node*& node){
     return most_left(node->left);
 }
 
+bool remove(Node*& node, int value){
+    if (node == nullptr) { //si l'arbre est vide
+        return false;
+    }
+    if (value < node->value) { //si la valeur est plus petite que la valeur du noeud actuel
+        return remove(node->left, value);
+    }
+    if (value > node->value) { //si la valeur est plus grande que la valeur du noeud actuel
+        return remove(node->right, value);
+    }
+
+    if (node->value == value) { //si on est au bon endroit
+        if (node->is_leaf()) { //Le nœud n'a pas de fils
+            delete node;
+            node = nullptr;
+            return true;
+        }
+        if (node->left == nullptr) { //Le nœud a un seul fils à droite
+            Node* right = node->right;
+            delete node;
+            node = right;
+            return true;
+        }
+        if (node->right == nullptr) { //Le nœud a un seul fils à gauche
+            Node* left = node->left;
+            delete node;
+            node = left;
+            return true;
+        }
+        Node*& rightN_most_left = most_left(node->right); //On prend le noeud le plus a gauche du fils droit (le plus petit des plus grands)
+        node->value = rightN_most_left->value; //On remplace la valeur du noeud à supprimer par la valeur du noeud trouvé
+        return remove(rightN_most_left, rightN_most_left->value); //On supprime le noeud qu'on a trouvé (on rappelle la fonction remove pour traiter tous les cas de suppression)
+    }
+    return false;
+}
+
+void delete_tree(Node* node){
+    if (node == nullptr) {
+        return;
+    }
+    node->delete_childs();
+    delete node;
+    node = nullptr;
+}
+
+int min(Node const& node){ //sensiblement la même fonction que most_left mais avec un return de int et non de Node*
+    if (node.left == nullptr) {
+        return node.value;
+    }
+    return min(*node.left);
+}
+
+int max(Node const& node){
+    if (node.right == nullptr) {
+        return node.value;
+    }
+    return max(*node.right);
+}
+
 
 
 
