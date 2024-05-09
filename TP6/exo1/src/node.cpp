@@ -1,4 +1,5 @@
 #include "node.hpp"
+#include <iostream>
 
 void pretty_print_left_right(Node const& node, std::string const& prefix, bool is_left) {
     if (node.right) {
@@ -30,10 +31,18 @@ bool Node::is_leaf() const{
 }
 
 void Node::insert(int value){
-    if (value < Node::value ){
-        left = create_node(value);
-    }else {
-        right = create_node(value);
+    if (value < this->value){
+        if (left == nullptr) {
+            left = create_node(value);
+        } else {
+            left->insert(value);
+        }
+    } else {
+        if (right == nullptr) {
+            right = create_node(value);
+        } else {
+            right->insert(value);
+        }
     }
 }
 
@@ -52,6 +61,8 @@ int Node::height() const{
     return 1 + std::max(left_height, right_height);
 }
 
+
+
 void Node::delete_childs(){
     if (left != nullptr) {
         left->delete_childs();
@@ -66,7 +77,50 @@ void Node::delete_childs(){
 }
 
 void Node::display_infixe() const{
-
+    if (left != nullptr) {
+        left->display_infixe();
+    }
+    std::cout <<" - "<< value ;
+    if (right != nullptr) {
+        right->display_infixe();
+    }
 }
+
+std::vector<Node const*> Node::prefixe() const{
+    std::vector<Node const*> result;
+    result.push_back(this);
+    if (left != nullptr) {
+        auto left_prefixe = left->prefixe();
+        result.insert(result.end(), left_prefixe.begin(), left_prefixe.end());
+    }
+    if (right != nullptr) {
+        auto right_prefixe = right->prefixe();
+        result.insert(result.end(), right_prefixe.begin(), right_prefixe.end());
+    }
+    return result;
+}
+
+std::vector<Node const*> Node::postfixe() const{
+    std::vector<Node const*> result;
+    if (left != nullptr) {
+        auto left_postfixe = left->postfixe();
+        result.insert(result.end(), left_postfixe.begin(), left_postfixe.end());
+    }
+    if (right != nullptr) {
+        auto right_postfixe = right->postfixe();
+        result.insert(result.end(), right_postfixe.begin(), right_postfixe.end());
+    }
+    result.push_back(this);
+    return result;
+}
+
+Node*& most_left(Node*& node){
+    if (node->left == nullptr) {
+        return node;
+    }
+    return most_left(node->left);
+}
+
+
 
 
