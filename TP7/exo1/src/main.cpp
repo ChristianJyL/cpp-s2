@@ -29,5 +29,29 @@ int main()
         std::cout << "Les deux graphes ne sont pas égaux" << std::endl;
     }
 
+    //exemple du cours
+    Graph::WeightedGraph graph;
+    graph.add_vertex(0);
+    graph.add_vertex(1);
+    graph.add_vertex(2);
+    graph.add_vertex(3);
+    graph.add_vertex(4);
+    graph.add_vertex(5);
+    graph.add_vertex(6);
+    
+    graph.add_directed_edge(0, 1);
+    graph.add_directed_edge(0, 2);
+    graph.add_directed_edge(1, 3);
+    graph.add_directed_edge(1, 4);
+    graph.add_directed_edge(2, 5);
+    graph.add_directed_edge(2, 6);
+
+    graph.print_DFS(0);
+    graph.print_BFS(0);
+
+
+
+   
+
     return 0;
 }
