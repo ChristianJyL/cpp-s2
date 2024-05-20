@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<indexing>
+ <object alt="" name="Image1" object_type="graphic"/>
+ <paragraph index="12" node_type="writer">Exercice 3 :</paragraph>
+ <paragraph index="14" node_type="writer">Voici le graphe à traiter : </paragraph>
+ <object index="30" name="Pluscourtchemin" object_type="table"/>
+ <paragraph index="32" node_type="writer" parent_index="30">Étape</paragraph>
+ <paragraph index="35" node_type="writer" parent_index="30">Distance</paragraph>
+ <paragraph index="38" node_type="writer" parent_index="30">A visiter</paragraph>
+ <paragraph index="41" node_type="writer" parent_index="30">Visité</paragraph>
+ <paragraph index="44" node_type="writer" parent_index="30">1</paragraph>
+ <paragraph index="47" node_type="writer" parent_index="30">A(0,0)</paragraph>
+ <paragraph index="50" node_type="writer" parent_index="30">A</paragraph>
+ <paragraph index="56" node_type="writer" parent_index="30">2</paragraph>
+ <paragraph index="59" node_type="writer" parent_index="30">A(0,0) – B(A,1) – C(A,5) – D(A,2)</paragraph>
+ <paragraph index="62" node_type="writer" parent_index="30">B, C, D</paragraph>
+ <paragraph index="65" node_type="writer" parent_index="30">A</paragraph>
+ <paragraph index="68" node_type="writer" parent_index="30">3</paragraph>
+ <paragraph index="71" node_type="writer" parent_index="30">A(0,0) – B(A,1) – C(A,5) – D(A,2)</paragraph>
+ <paragraph index="74" node_type="writer" parent_index="30">C, D</paragraph>
+ <paragraph index="77" node_type="writer" parent_index="30">A,B</paragraph>
+ <paragraph index="80" node_type="writer" parent_index="30">4</paragraph>
+ <paragraph index="83" node_type="writer" parent_index="30">A(0,0) – B(A,1) – C(A,5) – D(A,2)</paragraph>
+ <paragraph index="92" node_type="writer" parent_index="30">5</paragraph>
+ <paragraph index="95" node_type="writer" parent_index="30">A(0,0) – B(A,1) – C(D,4) – D(A,2) – E(D,7)</paragraph>
+ <paragraph index="98" node_type="writer" parent_index="30">C, E</paragraph>
+ <paragraph index="101" node_type="writer" parent_index="30">A, B, D</paragraph>
+ <paragraph index="104" node_type="writer" parent_index="30">6</paragraph>
+ <paragraph index="107" node_type="writer" parent_index="30">A(0,0) – B(A,1) – C(D,4) – D(A,2) – E(D,7) – F(C,8)</paragraph>
+ <paragraph index="110" node_type="writer" parent_index="30">E, F</paragraph>
+ <paragraph index="113" node_type="writer" parent_index="30">A, B, C, D</paragraph>
+ <paragraph index="119" node_type="writer" parent_index="30">A(0,0) – B(A,1) – C(D,4) – D(A,2) – E(D,7) – F(C,8)</paragraph>
+ <paragraph index="125" node_type="writer" parent_index="30">A, B, C, D, E , F</paragraph>
+ <paragraph index="130" node_type="writer">L’ordre inverses : F – C – D – A </paragraph>
+ <paragraph index="131" node_type="writer">Alors on a : A – D – C – F avec une distance de 8.</paragraph>
+</indexing>
