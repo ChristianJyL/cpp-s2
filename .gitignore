@@ -34,3 +34,4 @@
 bin/
 build/
 .vscode/
+/TP7/exo1/cmake-build-debug

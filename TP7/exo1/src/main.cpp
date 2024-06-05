@@ -49,9 +49,26 @@ int main()
     graph.print_DFS(0);
     graph.print_BFS(0);
 
+    Graph::WeightedGraph dijkstraGraph ; //exemple du cours
+    dijkstraGraph.add_vertex(0);
+    dijkstraGraph.add_vertex(1);
+    dijkstraGraph.add_vertex(2);
+    dijkstraGraph.add_vertex(3);
+    dijkstraGraph.add_vertex(4);
 
+    dijkstraGraph.add_directed_edge(0,1,1);
+    dijkstraGraph.add_directed_edge(0,2,2);
+    dijkstraGraph.add_directed_edge(1,2,1);
+    dijkstraGraph.add_directed_edge(2,3,3);
+    dijkstraGraph.add_directed_edge(1,3,5);
+    dijkstraGraph.add_directed_edge(2,4,6);
+    dijkstraGraph.add_directed_edge(3,4,2);
 
-   
+    std::unordered_map<int, std::pair<float, int>> result = Graph::dijkstra(dijkstraGraph, 0, 4);
+    for (auto const& [node, pair] : result){
+        std::cout << "Node : " << node << "(" << pair.first << ", " << pair.second << ")" << std::endl;
+    }
+
 
     return 0;
 }
